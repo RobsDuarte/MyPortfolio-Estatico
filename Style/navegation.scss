@@ -1,0 +1,53 @@
+@import 'colors';
+
+nav{    
+    text-align: center;
+    font-size: 1.3em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 10px;    
+    background-color:$blue-700;    
+    
+    li
+    { 
+        list-style: none;            
+        font-weight: 800; 
+        padding: inherit;
+        a
+        {
+            text-decoration: none;
+            display: flex;
+            align-items: center;     
+            
+        } 
+        a:focus, a:link,a:active,a:visited
+        {
+            color: $blue-100;
+        }               
+    }
+    
+    div
+    {
+        text-decoration: none;
+        display: flex;
+        align-items: center;           
+        margin: 10px;   
+        img
+        {
+            width: clamp(30px,50px,60px);
+            height: clamp(30px,50px,60px); 
+            padding: 5px;                
+        } 
+    }
+}
+
+@media only screen and (min-width:768px)
+{
+    nav
+    {
+        justify-content: right;        
+    }
+
+}
+
