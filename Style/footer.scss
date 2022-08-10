@@ -1,5 +1,48 @@
-footer{
+.contact
+{
     @include col-12;
-    height: 10vh;
-    background-color: $blue-700;   
+    height: 20vh;    
+    background-color: $blue-100;     
+    display: flex;
+    justify-content: center;
+    font-family: $MyFont;
+    section
+    {
+        @include col-11;
+        height: 100%;
+        display: inherit;
+        flex-flow:  row wrap;          
+        justify-items: center;        
+
+        h1
+        {
+            font-size: 3rem;
+            flex-basis: 100%;            
+            text-align: center;            
+        }
+        article
+        {
+            flex-basis: 100%;            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+
+        }
+        p
+        {
+            font-size: 1.3rem;
+            padding-left: 5px;
+            
+        }
+        figure
+        {           
+            img
+            {                
+                height: clamp(50px,60px,100px);
+            }
+        }  
+        
+    }
+     
 }

@@ -1,14 +1,16 @@
 @import 'colors';
-@import 'mixing';;
+@import 'mixing';
+@import 'settings';
 
 .C_font
 { 
   display: flex;
-  justify-content: center;
+  justify-content: center; 
+  padding-top: 5px;   
 }
 
-main{    
-    background-color: $blue-700;  
+main{     
+    font-family: $MyFont;
     section{
         display: flex;
         flex-flow: column nowrap;  
@@ -20,20 +22,17 @@ main{
             justify-content: center;
             
             p{       
-                margin-top:5px;
-                padding-bottom: 5px;
-                width: 15ch;        
-                font-size: 1.3rem;               
-                font-style:italic;     
+                margin-top:5px;                
+                width: 10ch;        
+                font-size: 1rem;                 
                 font-weight: bold;
                 text-align: center;
                 border-radius: 15px;  
-                border: 2px solid $blue-200; 
-                background-color: white;   
-                color: $blue-700;               
+                border: 2px solid $blue-200;                   
+                color: $blue-700;  
                 background: linear-gradient(to left, $blue-100 50%, $blue-700 50%) right;
                 background-size: 200%;
-                transition: .5s ease-out;
+                transition:  background-position .5s;
             }
             p:hover
             {
@@ -66,7 +65,82 @@ main{
         }     
     }
 }
+.break-line-1
+{
+    @include col-12;    
+    height: 5vh;
+    background: linear-gradient($blue-700,$blue-100);
+}
 
+.break-line-2
+{
+    @include col-12;    
+    height: 5vh;
+    background: linear-gradient($blue-100,$blue-700);
+}
+.skills
+{        
+    @include col-12;   
+    height: 50vh;    
+    background-color: $blue-100;
+    color: $blue-700;      
+    justify-content: center;
+    flex-flow: row wrap;    
+    
+    h2
+    {             
+        
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 3rem;
+    }
+    article
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;               
+        flex-basis: 50%;
+        height: 40%;
+        max-height: 100%;
+        max-width: 300px;     
+       
+        figure
+        {
+            height: 100px;
+            @include col-12;
+            display: inherit;
+            justify-content: center;
+            align-items: center;            
+            img
+            {
+                max-width: 100%;
+                max-height: 100%;          
+            }
+        }
+    }
+}
+
+.project
+{
+    @include col-12;
+    background-color: $blue-700;
+    color: aliceblue;    
+    h1
+    {        
+        @include col-12;
+        font-size: 3rem;
+        height: 10vh;
+        justify-content: center;
+        align-items: center;
+        display: inherit;
+    }
+}
+
+.contact
+{
+    background-color: $blue-100;
+    color: $blue-700; 
+}
 .content-right{   
     @include col-10;
     height:400px; 
@@ -76,7 +150,7 @@ main{
     margin:30px; 
     
     opacity: 0; 
-    transform: translateX(-30px); 
+    transform: translateX(-100px); 
     transition: transform 3s .20s cubic-bezier(0,1,0.3,1),
                 opacity .3s .25s ease-out;         
     will-change: transform,
